@@ -46,22 +46,22 @@ $(function(){
             this.eventView.render();            
         },
         eventClick: function(fcEvent) {
-            this.eventView.model = this.collection.get(fcEvent.id);
+            this.eventView.model = this.collection.get(fcEvent._id);
             this.eventView.render();
         },
         change: function(event) {
             // Look up the underlying event in the calendar and update its details from the model
-            var fcEvent = this.el.fullCalendar('clientEvents', event.get('id'))[0];
+            var fcEvent = this.el.fullCalendar('clientEvents', event.get('_id'))[0];
             fcEvent.title = event.get('title');
             fcEvent.color = event.get('color');
             this.el.fullCalendar('updateEvent', fcEvent);           
         },
         eventDropOrResize: function(fcEvent) {
             // Lookup the model that has the ID of the event and update its attributes
-            this.collection.get(fcEvent.id).save({start: fcEvent.start, end: fcEvent.end});            
+            this.collection.get(fcEvent._id).save({start: fcEvent.start, end: fcEvent.end});            
         },
         destroy: function(event) {
-            this.el.fullCalendar('removeEvents', event.id);         
+            this.el.fullCalendar('removeEvents', event._id);         
         }        
     });
 
