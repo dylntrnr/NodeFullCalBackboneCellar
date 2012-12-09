@@ -14,4 +14,4 @@ Quick start
 Known Problems
 -----------
 
-	Since I am just trying to get something working I mashed these together. The drag and drop feature currently isn't saving things correctly. But if you click on a date and create an even it should save to the database. 
+	None at this time. Let me know if you find one.
