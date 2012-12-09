@@ -4,17 +4,19 @@ var Server = mongo.Server,
     Db = mongo.Db,
     BSON = mongo.BSONPure;
 
-var server = new Server('localhost', 27017, {auto_reconnect: true});
-db = new Db('caldb', server, {safe: true});
+var server = new Server("ds045157.mongolab.com", 45157, {auto_reconnect:true});
+db = new Db('heroku_app9915870', server, {safe: true});
 
 db.open(function(err, db) {
     if(!err) {
-        console.log("Connected to 'caldb' database");
-        db.collection('dates', {safe:true}, function(err, collection) {
-            if (err) {
-                console.log("The 'dates' collection doesn't exist. Creating it with sample data...");
-                populateDB();
-            }
+        db.authenticate('heroku_app9915870', 'v9hmr0nbm2bp70mblr9if19hmo', function(err, success) {
+            console.log("Connected to 'heroku_app9915870' database");
+            db.collection('dates', {safe:true}, function(err, collection) {
+                if (err) {
+                    console.log("The 'dates' collection doesn't exist. Creating it with sample data...");
+                    populateDB();
+                }
+            });
         });
     }
 });
