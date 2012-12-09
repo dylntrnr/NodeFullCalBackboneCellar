@@ -9,9 +9,14 @@ Quick start
 	start mongodb
 	node server.js
 	
-	go to localhost:3000
+	go to localhost:5000
 	
 Known Problems
 -----------
 
 	None at this time. Let me know if you find one.
+	
+See it in action
+------------
+	
+	http://boiling-sierra-2780.herokuapp.com/
