@@ -71,7 +71,7 @@ exports.updateDate = function(req, res) {
     });
 };
 
-exports.deletedate = function(req, res) {
+exports.deleteDate = function(req, res) {
     var id = req.params.id;
     console.log('Deleting date: ' + id);
     db.collection('dates', function(err, collection) {

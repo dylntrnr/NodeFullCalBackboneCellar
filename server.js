@@ -16,7 +16,7 @@ app.get('/dates', date.findAll);
 app.get('/dates/:id', date.findById);
 app.post('/dates', date.addDate);
 app.put('/dates/:id', date.updateDate);
-app.delete('/dates', date.deleteDate);
+app.delete('/dates/:id', date.deleteDate);
 
 http.createServer(app).listen(app.get('port'), function () {
     console.log("Express server listening on port " + app.get('port'));

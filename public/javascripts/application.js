@@ -61,7 +61,7 @@ $(function(){
             this.collection.get(fcEvent._id).save({start: fcEvent.start, end: fcEvent.end});            
         },
         destroy: function(event) {
-            this.el.fullCalendar('removeEvents', event._id);         
+           this.el.fullCalendar('removeEvents', event.get('_id'));         
         }        
     });
 
